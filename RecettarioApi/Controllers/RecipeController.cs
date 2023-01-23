@@ -13,14 +13,14 @@ namespace RecettarioApi.Controllers;
 public class RecipeController : ControllerBase
 {
     private readonly Context context;
-    private readonly RecipeMapper recipeMapper;
+    private readonly Mapper mapper;
 
     public RecipeController(
         Context context,
-        RecipeMapper recipeMapper)
+        Mapper mapper)
     {
         this.context = context;
-        this.recipeMapper = recipeMapper;
+        this.mapper = mapper;
     }
     
     [HttpGet]
@@ -36,7 +36,7 @@ public class RecipeController : ControllerBase
         }
         
         List<RecipeResponse> recipes = await query
-            .Select(r => this.recipeMapper.RecipeToResponse(r))
+            .Select(r => this.mapper.RecipeToResponse(r))
             .ToListAsync();
         
         return id == null ?
@@ -52,7 +52,7 @@ public class RecipeController : ControllerBase
                 .ThenInclude(i => i.Article)
             .ToList()
             .Where(r => r.Categories != null && filters.All(f => r.Categories.Contains(f)))
-            .Select(r => this.recipeMapper.RecipeToResponse(r))
+            .Select(r => this.mapper.RecipeToResponse(r))
             .ToList();
 
         return Ok(recipes);
@@ -80,13 +80,13 @@ public class RecipeController : ControllerBase
             recipe.Ingredients.ForEach(recipeIngredient =>
             {
                 ShoppingItem item = shoppingList
-                    .FirstOrDefault(list => list.Ingredient.Equals(recipeIngredient.Article.Name));
+                    .FirstOrDefault(list => list.Name.Equals(recipeIngredient.Article.Name));
 
                 if (item == null)
                 {
                     shoppingList.Add(new ShoppingItem()
                     {
-                        Ingredient = recipeIngredient.Article.Name,
+                        Name = recipeIngredient.Article.Name,
                         UnconvertedQuantity = recipeIngredient.Quantity,
                         Unit = Utils.ParseStringAs<EQuantityType>(recipeIngredient.Article.Unit),
                     });

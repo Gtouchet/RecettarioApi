@@ -244,6 +244,19 @@
     "ImageUrl": "http://url.com"
   },
   {
+    "Id": "6aa64056-ec4b-486e-b8b8-8e24d147d7c9",
+    "Name": "Farine",
+    "Category": "SugarEpicery",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "1559a9fd-b31f-4d96-a3d4-0fae65e4a9b7",
+    "Name": "Oeuf",
+    "Category": "SugarEpicery",
+    "ImageUrl": "http://url.com"
+  },
+  {
     "Id": "b566efe5-4f7a-4470-b707-4b39a9a5f5e0",
     "Name": "Cooky",
     "Category": "SugarEpicery",

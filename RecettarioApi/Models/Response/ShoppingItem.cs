@@ -5,7 +5,7 @@ namespace RecettarioApi.Models.Response;
 
 public class ShoppingItem
 {
-    public string Ingredient { get; set; }
+    public string Name { get; set; }
     public string Quantity
     {
         get
@@ -28,5 +28,5 @@ public class ShoppingItem
     [JsonIgnore]
     public EQuantityType Unit { get; set; }
     [JsonIgnore]
-    public float UnconvertedQuantity { get; set; }
+    public int UnconvertedQuantity { get; set; }
 }

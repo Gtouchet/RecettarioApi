@@ -1,6 +1,4 @@
-﻿using RecettarioApi.Models.Database;
-
-namespace RecettarioApi.Models.Response;
+﻿namespace RecettarioApi.Models.Response;
 
 public class RecipeResponse
 {
@@ -12,5 +10,5 @@ public class RecipeResponse
     public List<string> Steps { get; set; }
     public string ImageUrl { get; set; }
 
-    public List<RecipeIngredient> Ingredients { get; set; }
+    public List<ShoppingItem> Ingredients { get; set; }
 }

@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<RecipeMapper>();
+builder.Services.AddSingleton<Mapper>();
 builder.Services.AddDbContext<Context>(options =>
 {
     options.UseInMemoryDatabase("database");

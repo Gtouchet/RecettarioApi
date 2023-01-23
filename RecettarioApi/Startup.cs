@@ -26,7 +26,7 @@ public abstract class Startup
             {
                 Id = r.Id,
                 Name = r.Name,
-                CookingTimeInMinutes = r.CookingTimeInMinutes,
+                CookingTimeInMinutes = r.CookingTimeInMinutes > 0 ? r.CookingTimeInMinutes : 0,
                 Difficulty = Utils.ParseStringAs<ERecipeDifficulty>(r.Difficulty).ToString(),
                 Categories = r.Categories == null ? null : r.Categories
                     .Split("::")
@@ -39,7 +39,8 @@ public abstract class Startup
                     .ToList()
                     .Select(ingredientQuantities => new RecipeIngredient()
                     {
-                        Article = context.Articles.ToList().FirstOrDefault(a => a.Name.Equals(ingredientQuantities.Key, StringComparison.OrdinalIgnoreCase)),
+                        Article = context.Articles.ToList().FirstOrDefault(a => a.Name.Equals(ingredientQuantities.Key, StringComparison.OrdinalIgnoreCase)) ??
+                            new Article() { Id = Guid.Parse("00000000-0000-0000-0000-000000000000"), Name = "Article inconnu", },
                         Quantity = ingredientQuantities.Value,
                     })
                     .ToList()

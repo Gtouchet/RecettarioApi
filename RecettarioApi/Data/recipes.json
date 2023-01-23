@@ -12,7 +12,7 @@
       "Crème fraîche": 250,
       "Oeuf": 3,
       "Farine": 250,
-      "Sucre":  100
+      "Sucre": 100
     }
   },
   {
@@ -26,7 +26,7 @@
     "IngredientQuantities": {
       "Farine": 300,
       "Oeuf": 2,
-      "Olives": 500
+      "Olive verte": 500
     }
   },
   {
@@ -51,9 +51,9 @@
     "Steps": "Préparer le poulet::Cuire le poulet pendant 3 siècles::Napper le poulet de curry",
     "ImageUrl": "http://url.com",
     "IngredientQuantities": {
-      "Poulet": 1,
+      "Poulet": 500,
       "Curry": 2,
-      "Oignon": 1,
+      "Oignon": 2,
       "Paprika": 1
     }
   }

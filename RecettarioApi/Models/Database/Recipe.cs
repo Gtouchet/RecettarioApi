@@ -17,9 +17,13 @@ public class Recipe
 
 public enum ERecipeCategory
 {
-    Aucune,
+    [Description("Aucune")]
+    None,
+    [Description("Vegan")]
     Vegan,
+    [Description("Végétarien")]
     Vegetarian,
+    [Description("Sans gluten")]
     GlutenFree,
 }
 
