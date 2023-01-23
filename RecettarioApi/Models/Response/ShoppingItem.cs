@@ -6,6 +6,7 @@ namespace RecettarioApi.Models.Response;
 public class ShoppingItem
 {
     public string Name { get; set; }
+    public string ImageUrl { get; set; }
     public string Quantity
     {
         get

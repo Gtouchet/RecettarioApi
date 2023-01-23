@@ -49,7 +49,7 @@ public class ArticleController : ControllerBase
     {
         List<ArticleResponse> articles = this.context.Articles
             .ToList()
-            .Where(r => r.Category != null && categories.Any(r.Category.Contains))
+            .Where(a => a.Category != null && categories.Any(a.Category.Contains))
             .Select(a => this.mapper.ArticleToResponse(a))
             .ToList();
 

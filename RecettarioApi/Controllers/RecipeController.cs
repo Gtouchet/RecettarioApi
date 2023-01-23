@@ -59,21 +59,21 @@ public class RecipeController : ControllerBase
     }
 
     [HttpGet("shoppingList")]
-    public async Task<ActionResult> ShoppingList([FromQuery] string[] recipes)
+    public async Task<ActionResult> ShoppingList([FromQuery] Guid[] ids)
     {
         List<ShoppingItem> shoppingList = new List<ShoppingItem>();
-        List<string> missingRecipes = new List<string>();
+        List<Guid> missingRecipes = new List<Guid>();
 
-        recipes.ToList().ForEach(async recipeName =>
+        ids.ToList().ForEach(async id =>
         {
             Recipe recipe = await this.context.Recipes
                 .Include(r => r.Ingredients)
                     .ThenInclude(i => i.Article)
-                .FirstOrDefaultAsync(r => r.Name.Equals(recipeName));
+                .FirstOrDefaultAsync(r => r.Id.Equals(id));
             
             if (recipe == null)
             {
-                missingRecipes.Add(recipeName);
+                missingRecipes.Add(id);
                 return;
             }
             
@@ -88,6 +88,7 @@ public class RecipeController : ControllerBase
                     {
                         Name = recipeIngredient.Article.Name,
                         UnconvertedQuantity = recipeIngredient.Quantity,
+                        ImageUrl = recipeIngredient.Article.ImageUrl,
                         Unit = Utils.ParseStringAs<EQuantityType>(recipeIngredient.Article.Unit),
                     });
                 }
