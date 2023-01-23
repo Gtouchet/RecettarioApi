@@ -1,0 +1,274 @@
+﻿[
+  {
+    "Id": "1fc7005f-8958-419a-a666-d91cd6128882",
+    "Name": "Pomme",
+    "Category": "Fruit",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "4f03d84e-a06a-4d61-87bf-f003477adbf4",
+    "Name": "Citron",
+    "Category": "Fruit",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "c5ff4816-719b-4976-8a46-e25c47668885",
+    "Name": "Fraise",
+    "Category": "Fruit",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "bbc3a333-db2a-4418-8422-ab199ae7577e",
+    "Name": "Framboise",
+    "Category": "Fruit",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+
+
+
+
+
+  {
+    "Id": "3eb58786-d941-4612-a10d-dcb3b0a0c2c1",
+    "Name": "Poireau",
+    "Category": "Vegetable",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "5591e07b-44b4-428d-9cec-2a8b58e9a932",
+    "Name": "Pomme de terre",
+    "Category": "Vegetable",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "2e4e803f-2d20-4fff-8b45-693a825321ff",
+    "Name": "Carotte",
+    "Category": "Vegetable",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "85cad1dd-44f4-49f9-ae69-d8440fc25f6d",
+    "Name": "Oignon",
+    "Category": "Vegetable",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "810d8dc4-a8b0-4627-91a5-2c4410427a91",
+    "Name": "Courgette",
+    "Category": "Vegetable",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "bd6ea5ab-54fa-4f3c-b903-704a862038e6",
+    "Name": "Concombre",
+    "Category": "Vegetable",
+    "ImageUrl": "http://url.com"
+  },
+
+
+
+
+
+  {
+    "Id": "6087aed3-fc98-4247-a0fa-5e31afbf1267",
+    "Name": "Boeuf",
+    "Category": "Meat",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "e11f74e9-3920-429f-8f93-4801a085050b",
+    "Name": "Poulet",
+    "Category": "Meat",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "eb4415ba-bd2d-46e7-9168-16a3fc1784ed",
+    "Name": "Dinde",
+    "Category": "Meat",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+
+
+
+
+
+  {
+    "Id": "4db54ee5-dac6-4617-981c-70cabd1cb9eb",
+    "Name": "Truite",
+    "Category": "Fish",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "86226319-b8de-4e2f-8775-099102e7e437",
+    "Name": "Saumon",
+    "Category": "Fish",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "a671cc7f-e7cc-4dd5-bc62-e310f24d81a0",
+    "Name": "Poisson pané",
+    "Category": "Fish",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+
+
+
+
+
+  {
+    "Id": "3f793569-1bf1-4313-829d-bb3acc3d5554",
+    "Name": "Yaourt",
+    "Category": "Fresh",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "e8c21b91-7353-4ea6-ad41-b2e2906d3e0f",
+    "Name": "Crème fraîche",
+    "Category": "Fresh",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "f0578ff6-33af-4489-8848-9c4921a6f7b1",
+    "Name": "Emmental",
+    "Category": "Fresh",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "0e9fcb0c-9f7f-4169-811e-a664b8cf8b19",
+    "Name": "Feta",
+    "Category": "Fresh",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+
+
+
+
+
+  {
+    "Id": "8ec778d4-34ad-446b-80ef-7eb2fd2e636a",
+    "Name": "Steack haché",
+    "Category": "Frozen",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "16030407-808d-4879-a460-dce43697c48a",
+    "Name": "Frite",
+    "Category": "Frozen",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "409c61c6-5ba3-48d8-a5be-4689c4f8b7f5",
+    "Name": "Petit pois",
+    "Category": "Frozen",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+
+
+
+
+
+  {
+    "Id": "ffdcb492-70be-4938-8202-a672cde54a55",
+    "Name": "Lait de coco",
+    "Category": "Drink",
+    "Unit": "Mililiter",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "56ff0184-f5ad-4907-ad34-a3d04dd325f4",
+    "Name": "Vin blanc",
+    "Category": "Drink",
+    "Unit": "Mililiter",
+    "ImageUrl": "http://url.com"
+  },
+
+
+
+
+
+  {
+    "Id": "c378b906-4e1e-436c-b82b-2099c78f1e8a",
+    "Name": "Olive verte",
+    "Category": "SaltEpicery",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "758beb71-a6c0-4db2-88e7-8582ab8ff6d5",
+    "Name": "Paprika",
+    "Category": "SaltEpicery",
+    "Unit": "TeaSpoon",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "adfde79a-ad17-434d-9449-ffd05a1c294f",
+    "Name": "Riz",
+    "Category": "SaltEpicery",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "314d79bf-c69e-4732-afff-3e061ca7614c",
+    "Name": "Curry",
+    "Category": "SaltEpicery",
+    "Unit": "TeaSpoon",
+    "ImageUrl": "http://url.com"
+  },
+
+
+
+
+
+  {
+    "Id": "fadb3a89-7bcb-4af1-bd1e-ba89a30b61ee",
+    "Name": "Sucre",
+    "Category": "SugarEpicery",
+    "Unit": "Gram",
+    "ImageUrl": "http://url.com"
+  },
+  {
+    "Id": "b566efe5-4f7a-4470-b707-4b39a9a5f5e0",
+    "Name": "Cooky",
+    "Category": "SugarEpicery",
+    "ImageUrl": "http://url.com"
+  },
+
+
+
+
+
+  {
+    "Id": "80a179d6-0a7e-4728-8464-59a48427d208",
+    "Name": "Déodorant",
+    "Category": "HygieneAndBeauty",
+    "ImageUrl": "http://url.com"
+  },
+
+
+
+
+
+  {
+    "Id": "e921b215-8a3d-41d8-93ac-ea347b789198",
+    "Name": "Savon",
+    "Category": "Cleaning",
+    "ImageUrl": "http://url.com"
+  }
+]
