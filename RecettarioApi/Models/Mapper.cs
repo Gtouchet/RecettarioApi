@@ -17,7 +17,7 @@ public class Mapper
             Steps = Utils.ParseRecipeStepsToList(recipe.Steps),
             ImageUrl = recipe.ImageUrl,
             Ingredients = recipe.Ingredients
-                .Select(i => new ShoppingItem()
+                .Select(i => new ShoppingListResponse()
                 {
                     Name = i.Article.Name,
                     UnconvertedQuantity = i.Quantity,

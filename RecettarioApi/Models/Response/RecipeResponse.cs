@@ -10,5 +10,5 @@ public class RecipeResponse
     public List<string> Steps { get; set; }
     public string ImageUrl { get; set; }
 
-    public List<ShoppingItem> Ingredients { get; set; }
+    public List<ShoppingListResponse> Ingredients { get; set; }
 }

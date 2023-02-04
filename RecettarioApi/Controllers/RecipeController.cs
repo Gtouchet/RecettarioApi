@@ -99,10 +99,10 @@ public class RecipeController : ControllerBase
             });
         });
 
-        return Ok(missingRecipes.Count == 0 ? shoppingList : new
+        return Ok(new ShoppingListResponse()
         {
             ShoppingList = shoppingList,
-            Warning = "Missing recipes : " + string.Join(", ", missingRecipes),
+            Warning = missingRecipes.Count > 0 ? "Missing recipes : " + string.Join(", ", missingRecipes) : null,
         });
     }
 }

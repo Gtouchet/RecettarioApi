@@ -3,6 +3,13 @@ using System.Text.Json.Serialization;
 
 namespace RecettarioApi.Models.Response;
 
+public class ShoppingListResponse
+{
+    public List<ShoppingItem> ShoppingList { get; set; }
+    public string Warning { get; set; }
+}
+
+
 public class ShoppingItem
 {
     public string Name { get; set; }

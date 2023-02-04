@@ -43,6 +43,7 @@ public abstract class Startup
                 Id = r.Id,
                 Name = r.Name,
                 CookingTimeInMinutes = r.CookingTimeInMinutes > 0 ? r.CookingTimeInMinutes : 0,
+                // Set difficulty as default if not valid
                 Difficulty = Utils.ParseStringAs<ERecipeDifficulty>(r.Difficulty).ToString(),
                 Categories = r.Categories == null ? null : r.Categories
                     .Split("::")
