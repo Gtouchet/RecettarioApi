@@ -1,4 +1,6 @@
-﻿using RecettarioApi.Models;
+﻿using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Blob;
+using RecettarioApi.Models;
 using RecettarioApi.Models.Database;
 using System.Text.Json;
 
@@ -6,23 +8,37 @@ namespace RecettarioApi;
 
 public abstract class Startup
 {
+    private static readonly string azureContainerConnectionString =
+        "DefaultEndpointsProtocol=https;" +
+        "AccountName=recettariostorage;" +
+        "AccountKey=nl1jfW46iYVB4nNz6K8EzRabUWNhwe6b4TcWUIiwxmN95aXp8xHedK47zznNHkwfNBSE1BjsJQH++AStitvRxg==;" +
+        "EndpointSuffix=core.windows.net";
+
     public async static Task InitializeDatabase(Context context)
     {
-        await Startup.CreateIngredients(context);
-        await Startup.CreateRecipes(context);
+        CloudStorageAccount storageAccount = CloudStorageAccount.Parse(Startup.azureContainerConnectionString);
+        CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+        CloudBlobContainer container = blobClient.GetContainerReference("data");
+
+        await Startup.ReadIngredients(container, context);
+        await Startup.ReadRecipes(container, context);
     }
 
-    public static async Task CreateIngredients(Context context)
+    private static async Task ReadIngredients(CloudBlobContainer container, Context context)
     {
-        JsonSerializer.DeserializeAsync<List<Article>>(File.OpenRead("Data/articles.json")).Result.ForEach(a => context.Articles.Add(a));
+        CloudBlockBlob articlesFile = container.GetBlockBlobReference("articles.json");
+        string articlesJson = await articlesFile.DownloadTextAsync();
+        JsonSerializer.Deserialize<List<Article>>(articlesJson.Substring(1)).ForEach(a => context.Articles.Add(a));
         await context.SaveChangesAsync();
     }
 
-    public static async Task CreateRecipes(Context context)
+    private static async Task ReadRecipes(CloudBlobContainer container, Context context)
     {
-        JsonSerializer.DeserializeAsync<List<JsonRecipe>>(File.OpenRead("Data/recipes.json")).Result.ForEach(r =>
+        CloudBlockBlob recipesFile = container.GetBlockBlobReference("recipes.json");
+        string recipesJson = await recipesFile.DownloadTextAsync();
+        JsonSerializer.Deserialize<List<JsonRecipe>>(recipesJson.Substring(1)).ForEach(r =>
         {
-            context.Recipes.Add(new()
+            context.Recipes.Add(new Recipe()
             {
                 Id = r.Id,
                 Name = r.Name,
@@ -31,6 +47,7 @@ public abstract class Startup
                 Categories = r.Categories == null ? null : r.Categories
                     .Split("::")
                     .ToList()
+                    // Set category as default if not valid
                     .Select(c => Utils.ParseStringAs<ERecipeCategory>(c).ToString())
                     .Aggregate((a, b) => a + "::" + b),
                 Steps = r.Steps,
@@ -48,7 +65,7 @@ public abstract class Startup
         });
         await context.SaveChangesAsync();
     }
-
+    
     internal class JsonRecipe : Recipe
     {
         public Dictionary<string, int> IngredientQuantities { get; set; }

@@ -1,5 +1,4 @@
-﻿using RecettarioApi.Models.Database;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Reflection;
 
 namespace RecettarioApi;
@@ -8,15 +7,7 @@ public class Utils
 {
     public static List<string> ParseRecipeCategoriesToList(string value)
     {
-        if (value == null)
-        {
-            return null;
-        }
-        
-        return value.Split("::")
-            .ToList()
-            .Select(c => Utils.GetEnumDescription(Utils.ParseStringAs<ERecipeCategory>(c)))
-            .ToList();
+        return value == null ? null : value.Split("::").ToList();
     }
 
     public static List<string> ParseRecipeStepsToList(string value)

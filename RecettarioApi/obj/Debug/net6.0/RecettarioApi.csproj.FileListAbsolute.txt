@@ -48,3 +48,5 @@ E:\RepoGit\RecettarioApi\RecettarioApi\obj\Debug\net6.0\refint\RecettarioApi.dll
 E:\RepoGit\RecettarioApi\RecettarioApi\obj\Debug\net6.0\RecettarioApi.pdb
 E:\RepoGit\RecettarioApi\RecettarioApi\obj\Debug\net6.0\RecettarioApi.genruntimeconfig.cache
 E:\RepoGit\RecettarioApi\RecettarioApi\obj\Debug\net6.0\ref\RecettarioApi.dll
+E:\RepoGit\RecettarioApi\RecettarioApi\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\RepoGit\RecettarioApi\RecettarioApi\bin\Debug\net6.0\Microsoft.WindowsAzure.Storage.dll
