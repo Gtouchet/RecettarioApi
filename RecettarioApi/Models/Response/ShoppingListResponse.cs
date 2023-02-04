@@ -9,7 +9,6 @@ public class ShoppingListResponse
     public string Warning { get; set; }
 }
 
-
 public class ShoppingItem
 {
     public string Name { get; set; }
