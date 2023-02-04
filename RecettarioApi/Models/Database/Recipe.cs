@@ -29,13 +29,13 @@ public enum ERecipeCategory
 
 public enum ERecipeDifficulty
 {
-    [Description("No lo sé")]
+    [Description("Aucune")]
     None,
-    [Description("Ez")]
+    [Description("Simple")]
     Easy,
-    [Description("Isok")]
+    [Description("Normale")]
     Medium,
-    [Description("Oof")]
+    [Description("Difficile")]
     Hard,
 }
 
