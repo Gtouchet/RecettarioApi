@@ -28,7 +28,7 @@ public abstract class Startup
     {
         CloudBlockBlob articlesFile = container.GetBlockBlobReference("articles.json");
         string articlesJson = await articlesFile.DownloadTextAsync();
-        JsonSerializer.Deserialize<List<Article>>(articlesJson.Substring(1)).ForEach(a => context.Articles.Add(a));
+        JsonSerializer.Deserialize<List<Article>>(articlesJson).ForEach(a => context.Articles.Add(a));
         await context.SaveChangesAsync();
     }
 
@@ -36,7 +36,7 @@ public abstract class Startup
     {
         CloudBlockBlob recipesFile = container.GetBlockBlobReference("recipes.json");
         string recipesJson = await recipesFile.DownloadTextAsync();
-        JsonSerializer.Deserialize<List<JsonRecipe>>(recipesJson.Substring(1)).ForEach(r =>
+        JsonSerializer.Deserialize<List<JsonRecipe>>(recipesJson).ForEach(r =>
         {
             context.Recipes.Add(new Recipe()
             {

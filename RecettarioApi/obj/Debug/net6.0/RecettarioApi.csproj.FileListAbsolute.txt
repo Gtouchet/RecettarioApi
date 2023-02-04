@@ -7,8 +7,6 @@ E:\RepoGit\RecettarioApi\RecettarioApi\obj\Debug\net6.0\RecettarioApi.MvcApplica
 E:\RepoGit\RecettarioApi\RecettarioApi\obj\Debug\net6.0\RecettarioApi.MvcApplicationPartsAssemblyInfo.cache
 E:\RepoGit\RecettarioApi\RecettarioApi\bin\Debug\net6.0\appsettings.Development.json
 E:\RepoGit\RecettarioApi\RecettarioApi\bin\Debug\net6.0\appsettings.json
-E:\RepoGit\RecettarioApi\RecettarioApi\bin\Debug\net6.0\Data\articles.json
-E:\RepoGit\RecettarioApi\RecettarioApi\bin\Debug\net6.0\Data\recipes.json
 E:\RepoGit\RecettarioApi\RecettarioApi\bin\Debug\net6.0\RecettarioApi.exe
 E:\RepoGit\RecettarioApi\RecettarioApi\bin\Debug\net6.0\RecettarioApi.deps.json
 E:\RepoGit\RecettarioApi\RecettarioApi\bin\Debug\net6.0\RecettarioApi.runtimeconfig.json
