@@ -84,13 +84,7 @@ public class RecipeController : ControllerBase
 
                 if (item == null)
                 {
-                    shoppingList.Add(new ShoppingItem()
-                    {
-                        Name = recipeIngredient.Article.Name,
-                        UnconvertedQuantity = recipeIngredient.Quantity,
-                        ImageUrl = recipeIngredient.Article.ImageUrl,
-                        Unit = Utils.ParseStringAs<EQuantityType>(recipeIngredient.Article.Unit),
-                    });
+                    shoppingList.Add(this.mapper.RecipeIngredientToShoppingItem(recipeIngredient));
                 }
                 else
                 {

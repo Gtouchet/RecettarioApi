@@ -17,12 +17,7 @@ public class Mapper
             Steps = Utils.ParseRecipeStepsToList(recipe.Steps),
             ImageUrl = recipe.ImageUrl,
             Ingredients = recipe.Ingredients
-                .Select(i => new ShoppingItem()
-                {
-                    Name = i.Article.Name,
-                    UnconvertedQuantity = i.Quantity,
-                    Unit = Utils.ParseStringAs<EQuantityType>(i.Article.Unit),
-                })
+                .Select(i => this.RecipeIngredientToShoppingItem(i))
                 .ToList(),
         };
     }
@@ -35,6 +30,19 @@ public class Mapper
             Name = article.Name,
             Category = Utils.GetEnumDescription(Utils.ParseStringAs<EArticleCategory>(article.Category)),
             ImageUrl = article.ImageUrl,
+        };
+    }
+
+    public ShoppingItem RecipeIngredientToShoppingItem(RecipeIngredient ingredient)
+    {
+        return new ShoppingItem()
+        {
+            Id = ingredient.Article.Id,
+            Name = ingredient.Article.Name,
+            Category = ingredient.Article.Category,
+            UnconvertedQuantity = ingredient.Quantity,
+            Unit = Utils.ParseStringAs<EQuantityType>(ingredient.Article.Unit),
+            ImageUrl = ingredient.Article.ImageUrl,
         };
     }
 }

@@ -11,7 +11,9 @@ public class ShoppingListResponse
 
 public class ShoppingItem
 {
+    public Guid Id { get; set; }
     public string Name { get; set; }
+    public string Category { get; set; }
     public string ImageUrl { get; set; }
     public string Quantity
     {
