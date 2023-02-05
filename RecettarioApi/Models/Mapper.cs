@@ -29,6 +29,11 @@ public class Mapper
             Id = article.Id,
             Name = article.Name,
             Category = Utils.GetEnumDescription(Utils.ParseStringAs<EArticleCategory>(article.Category)),
+            Unit = Utils.ParseStringAs<EQuantityType>(article.Unit) switch {
+                EQuantityType.Gram => "g",
+                EQuantityType.Mililiter => "cl",
+                _ => "",
+            },
             ImageUrl = article.ImageUrl,
         };
     }
