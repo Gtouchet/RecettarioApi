@@ -46,8 +46,8 @@ public class Mapper
             Id = ingredient.Article.Id,
             Name = ingredient.Article.Name,
             Category = Utils.GetEnumDescription(Utils.ParseStringAs<EArticleCategory>(ingredient.Article.Category)),
-            UnconvertedQuantity = ingredient.Quantity,
-            UnconvertedUnit = Utils.ParseStringAs<EQuantityType>(ingredient.Article.Unit),
+            Quantity = ingredient.Quantity,
+            Unit = ingredient.Article.Unit,
             ImageUrl = ingredient.Article.ImageUrl,
         };
     }

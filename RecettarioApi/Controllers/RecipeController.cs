@@ -57,46 +57,4 @@ public class RecipeController : ControllerBase
 
         return Ok(recipes);
     }
-
-    [HttpGet("shoppingList")]
-    public async Task<ActionResult> ShoppingList([FromQuery] Guid[] ids)
-    {
-        List<ShoppingItem> shoppingList = new List<ShoppingItem>();
-        List<Guid> missingRecipes = new List<Guid>();
-
-        ids.ToList().ForEach(async id =>
-        {
-            Recipe recipe = await this.context.Recipes
-                .Include(r => r.Ingredients)
-                    .ThenInclude(i => i.Article)
-                .FirstOrDefaultAsync(r => r.Id.Equals(id));
-            
-            if (recipe == null)
-            {
-                missingRecipes.Add(id);
-                return;
-            }
-            
-            recipe.Ingredients.ForEach(recipeIngredient =>
-            {
-                ShoppingItem item = shoppingList
-                    .FirstOrDefault(list => list.Name.Equals(recipeIngredient.Article.Name));
-
-                if (item == null)
-                {
-                    shoppingList.Add(this.mapper.RecipeIngredientToShoppingItem(recipeIngredient));
-                }
-                else
-                {
-                    item.UnconvertedQuantity += recipeIngredient.Quantity;
-                }
-            });
-        });
-
-        return Ok(new ShoppingListResponse()
-        {
-            ShoppingList = shoppingList,
-            Warning = missingRecipes.Count > 0 ? "Missing recipes : " + string.Join(", ", missingRecipes) : null,
-        });
-    }
 }
