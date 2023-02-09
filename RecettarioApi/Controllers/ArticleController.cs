@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using RecettarioApi.Models;
 using RecettarioApi.Models.Database;
 using RecettarioApi.Models.Response;

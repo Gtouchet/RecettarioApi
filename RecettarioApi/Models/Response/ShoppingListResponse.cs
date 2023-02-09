@@ -15,27 +15,29 @@ public class ShoppingItem
     public string Name { get; set; }
     public string Category { get; set; }
     public string ImageUrl { get; set; }
-    public string Quantity
+    public float Quantity { get { return float.Parse(this.QuantityString.Split(" ")[0]); } }
+    public string Unit { get { return string.Join(" ", this.QuantityString.Split(" ").Skip(1)); } }
+
+    [JsonIgnore]
+    public string QuantityString
     {
         get
         {
-            switch (this.Unit)
+            return this.UnconvertedUnit switch
             {
-                case EQuantityType.None: return this.UnconvertedQuantity.ToString();
-                case EQuantityType.Gram: return this.UnconvertedQuantity < 1_000 ?
+                EQuantityType.None => this.UnconvertedQuantity.ToString(),
+                EQuantityType.Gram => this.UnconvertedQuantity < 1_000 ?
                         this.UnconvertedQuantity + " g" :
-                        this.UnconvertedQuantity / 1000 + " Kg";
-                case EQuantityType.Mililiter: return this.UnconvertedQuantity < 1_000 ? 
+                        (float)this.UnconvertedQuantity / 1000 + " Kg",
+                EQuantityType.Mililiter => this.UnconvertedQuantity < 1_000 ?
                         this.UnconvertedQuantity + " ml" :
-                        this.UnconvertedQuantity / 1000 + " L";
-                default: return this.UnconvertedQuantity + " " + Utils.GetEnumDescription(this.Unit).ToLower();
-            }
+                        (float)this.UnconvertedQuantity / 1000 + " L",
+                _ => this.UnconvertedQuantity + " " + Utils.GetEnumDescription(this.UnconvertedUnit).ToLower(),
+            };
         }
-        set { }
     }
-
     [JsonIgnore]
-    public EQuantityType Unit { get; set; }
+    public EQuantityType UnconvertedUnit { get; set; }
     [JsonIgnore]
     public int UnconvertedQuantity { get; set; }
 }

@@ -29,7 +29,8 @@ public class Mapper
             Id = article.Id,
             Name = article.Name,
             Category = Utils.GetEnumDescription(Utils.ParseStringAs<EArticleCategory>(article.Category)),
-            Unit = Utils.ParseStringAs<EQuantityType>(article.Unit) switch {
+            Unit = Utils.ParseStringAs<EQuantityType>(article.Unit) switch
+            {
                 EQuantityType.Gram => "g",
                 EQuantityType.Mililiter => "cl",
                 _ => "",
@@ -46,7 +47,7 @@ public class Mapper
             Name = ingredient.Article.Name,
             Category = Utils.GetEnumDescription(Utils.ParseStringAs<EArticleCategory>(ingredient.Article.Category)),
             UnconvertedQuantity = ingredient.Quantity,
-            Unit = Utils.ParseStringAs<EQuantityType>(ingredient.Article.Unit),
+            UnconvertedUnit = Utils.ParseStringAs<EQuantityType>(ingredient.Article.Unit),
             ImageUrl = ingredient.Article.ImageUrl,
         };
     }
