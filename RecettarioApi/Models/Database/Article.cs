@@ -44,8 +44,10 @@ public enum EQuantityType
 {
     [Description("")]
     None,
-    
+
+    [Description("g")]
     Gram,
+    [Description("ml")]
     Mililiter,
 
     [Description("Cuillères à café")]

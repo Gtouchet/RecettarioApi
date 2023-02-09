@@ -1,5 +1,4 @@
 ﻿using RecettarioApi.Models.Database;
-using System.Text.Json.Serialization;
 
 namespace RecettarioApi.Models.Response;
 
